@@ -8,10 +8,12 @@ public class TestLab3 : MonoBehaviour
      public float moveSpeed = 5f;
      public GameObject winCanva;
         private Vector2 move;
+        private Vector3 startPos;
 
         void Start()
         {
-            winCanva.SetActive(false);
+            
+            startPos = transform.position;
         }
     
         void Update()
@@ -29,18 +31,14 @@ public class TestLab3 : MonoBehaviour
     
         void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Border"))
+
+            
+            if (other.gameObject.CompareTag("enemy"))
             {
                 // Đưa nhân vật trở lại vị trí hợp lệ
-                transform.position = new Vector2(
-                    Mathf.Clamp(transform.position.x, -8f, 8f),
-                    Mathf.Clamp(transform.position.y, -4f, 4f)
-                ); // Thay đổi giá trị theo kích thước bản đồ
+                transform.position = startPos;
             }
 
-            if (other.CompareTag("End"))
-            {
-                winCanva.SetActive(true); 
-            }
+           
         }
 }

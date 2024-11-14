@@ -6,6 +6,7 @@ TagManager:
   tags:
   - win
   - End
+  - enemy
   layers:
   - Default
   - TransparentFX
