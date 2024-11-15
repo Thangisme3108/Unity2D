@@ -38,6 +38,11 @@ public class TestLab3 : MonoBehaviour
                 // Đưa nhân vật trở lại vị trí hợp lệ
                 transform.position = startPos;
             }
+            if (other.gameObject.CompareTag("win"))
+            {
+                // Đưa nhân vật trở lại vị trí hợp lệ
+               winCanva.SetActive(true);
+            }
 
            
         }
